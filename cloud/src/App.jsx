@@ -1,11 +1,14 @@
-import React from "react";
-import UploadFile from "./components/uploadfile.jsx";
+import { createBrowserRouter } from 'react-router-dom';
+import Home from './components/home';
+import Login from './components/login';
+import Register from './components/register';
 
-const App = () => (
-    <div>
-        <h1>Decentralized Cloud Storage</h1>
-        <UploadFile/>
-    </div>
-);
+const App = () => {
+  return (
+    <>
+    <Register/>
+    </>
+  );
+};
 
 export default App;

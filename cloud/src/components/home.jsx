@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
 import ContractArtifact from "../DecentralizedStorage.json";
-import {pinataApiKey,pinataSecretApiKey,contractAddress} from "../config.js";
+import {pinataApiKey,pinataSecretApiKey,contractAddress} from "../config.js"
 
 
 // Example: Pinata API URL
@@ -53,7 +53,7 @@ const uploadFileToBlockchain = async (fileCID, fileSize) => {
   }
 };
 
-const App = () => {
+const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -82,11 +82,17 @@ const App = () => {
 
   return (
     <div>
-      <h1>Decentralized File Storage</h1>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload File</button>
     </div>
   );
 };
+
+const App = () => (
+    <div>
+        <h1>Decentralized Cloud Storage</h1>
+        <UploadFile/>
+    </div>
+);
 
 export default App;
