@@ -6,7 +6,7 @@ import {pinataApiKey,pinataSecretApiKey,contractAddress} from "../config.js";
 
 
 // Example: Pinata API URL
-const pinataUrl = "https://api.pinata.cloud/pinning/pinFileToIPFS";
+// const pinataUrl = "https://api.pinata.cloud/pinning/pinFileToIPFS";
 
 // Smart contract details
 
