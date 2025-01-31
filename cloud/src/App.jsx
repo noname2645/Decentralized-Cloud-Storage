@@ -1,13 +1,28 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/home';
 import Login from './components/login';
 import Register from './components/register';
 
+// Create a router with defined routes
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />, // Home page for the root path
+  },
+  {
+    path: "/login",
+    element: <Login />, // Login page
+  },
+  {
+    path: "/register",
+    element: <Register />, // Register page
+  },
+]);
+
 const App = () => {
   return (
-    <>
-    <Register/>
-    </>
+    // Wrap your app in RouterProvider to handle routing
+    <RouterProvider router={router} />
   );
 };
 
