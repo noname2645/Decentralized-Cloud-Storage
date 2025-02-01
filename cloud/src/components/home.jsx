@@ -8,7 +8,7 @@ import { pinataApiKey, pinataSecretApiKey, contractAddress } from "../config.js"
 const pinataUrl = "https://api.pinata.cloud/pinning/pinFileToIPFS";
 
 // Smart contract details
-const contractABI = ContractArtifact.abi;
+//const contractABI = ContractArtifact.abi;
 
 // Function to upload the file to Pinata and get its IPFS CID
 const pinFileToIPFS = async (file) => {
