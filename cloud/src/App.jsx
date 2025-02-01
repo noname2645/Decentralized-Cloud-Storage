@@ -7,6 +7,10 @@ import Register from './components/register';
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Register />, // Home page for the root path
+  },
+  {
+    path: "/home",
     element: <Home />, // Home page for the root path
   },
   {
