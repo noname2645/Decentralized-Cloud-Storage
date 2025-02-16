@@ -1,0 +1,195 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --royal-purple: #7e03aa;
+  --light-shadow: #4e1a6e;
+  --dark-shadow: #240d3a;
+  --color-background: #000119;
+  --stroke-width: calc(1em / 16);
+  --font-size: 30vmin;
+  --font-weight: 700;
+  --letter-spacing: calc(1em / 8);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #0d0f23, #000a1f);
+  color: white;
+  background: url('pxfuel.jpg') center/cover no-repeat fixed;
+  text-align: center;
+  padding: 50px;
+}
+
+.blur-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Adjust the blur strength */
+  background: rgba(8, 7, 0, 0.3); /* Dark overlay */
+  z-index: -1;
+}
+
+
+/* Header Text with Stroke Effect */
+h1 {
+  font-size: 4em;
+  margin-bottom: 15px;
+  background-color: #14043b;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+
+  /* Initial Stroke */
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: transparent;
+  color: transparent; 
+
+  /* Animation */
+  animation: gradientStroke 5s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 300% 300%;
+}
+
+/* Moving Gradient Stroke */
+@keyframes gradientStroke {
+  0% {
+    -webkit-text-stroke-color: #0ff1d7;
+  }
+  50% {
+    -webkit-text-stroke-color: #5b86e9;
+  }
+  100% {
+    -webkit-text-stroke-color: #00fffb;
+  }
+}
+
+/* Description Text */
+p {
+  font-size: 2em;
+  max-width: 700px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  
+  /* Text Shadow */
+  text-shadow: 
+    0px 0px 5px rgba(92, 86, 95, 0.8),
+    0px 0px 10px rgba(1, 10, 10, 0.6),
+    2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Neon Button Styles */
+.btn {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.7em 2em;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    0% var(--curve-size),
+    var(--curve-size) 0,
+    100% 0,
+    100% calc(100% - var(--curve-size)),
+    calc(100% - var(--curve-size)) 100%,
+    0 100%
+  );
+  transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 31% 0%;
+  }
+  50% {
+    background-position: 70% 100%;
+  }
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+    var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn:hover::after {
+  clip-path: polygon(
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
