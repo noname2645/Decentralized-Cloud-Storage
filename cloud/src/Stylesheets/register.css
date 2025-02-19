@@ -5,8 +5,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Afacad Flux", "Inter", "Merienda", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color: rgb(39, 36, 36);
+    font-family: "Afacad Flux", "Inter", "Merienda", sans-serif;
 }
 
 /* Form Container */
@@ -15,17 +22,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    max-width: 350px;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
+    gap: 15px;  /* Reduced from 20px */
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
     background-color: #1a1a1a;
     color: #fff;
     border: 1px solid #333;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
+    border-radius: 15px;
 }
 
 /* Title Style */
@@ -39,27 +43,22 @@
     justify-content: center;
     color: #00bfff;
     text-align: center;
-    background: transparent;
+    margin-bottom: 0;  /* Removed margin-bottom */
 }
 
 /* Animated title dots */
 .title::before,
 .title::after {
-    position: absolute;
     content: "";
+    position: absolute;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    left: 0;
     background-color: #00bfff;
 }
 
-.title::before {
-    width: 18px;
-    height: 18px;
-}
-
 .title::after {
+    /* right: -30px; */
     width: 18px;
     height: 18px;
     animation: pulse 1s linear infinite;
@@ -70,7 +69,6 @@
 .signin {
     font-size: 20px;
     color: rgba(255, 255, 255, 0.7);
-    background: transparent;
 }
 
 .signin {
@@ -80,79 +78,78 @@
 .signin a {
     color: #00bfff;
     text-decoration: none;
-    background: transparent;
 }
 
 .signin a:hover {
-    text-decoration: underline royalblue;
+    text-decoration: underline;
+    color: royalblue;
 }
 
 /* Form Input Labels */
 .form label {
     position: relative;
-    color: #fff;
     width: 100%;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
 }
 
 .form label input {
-    font-size: 20px;
-    letter-spacing: 2px;
-    padding: 10px;
     width: 100%;
-    border: none;
+    padding: 12px 15px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
     background-color: transparent;
     color: #fff;
+    outline: none;
 }
 
 .form label input::placeholder {
-    font-size: 18px; /* Increased placeholder font size */
-    letter-spacing: 2px; /* Optional: Adjust letter-spacing for placeholder */
-    color: rgba(255, 255, 255, 0.7); /* Lighter color for placeholder */
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Submit Button */
 .submit {
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 12px 20px;
     border-radius: 10px;
     color: #000000;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #00bfff;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     width: 60%;
     letter-spacing: 2px;
     font-weight: bold;
+    margin: 10px;
 }
 
 .submit:hover {
     background-color: #00bfff96;
 }
 
-#OR{
+#OR {
     letter-spacing: 2px;
-    background: transparent;
-    /* border: 2px solid; */
+    color: #fff;
+    margin: 15px 0;
+    
 }
 
 /* Google Sign Up Button */
 .google-signup-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #0D1B4C;
     color: white;
-    padding: 6px;
+    padding: 7px;
     width: 100%;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 30px;
-    font-weight: bold;
     border: 2px solid navy;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .google-signup-btn:hover {
@@ -162,13 +159,10 @@
 .gimg {
     height: 40px;
     width: 40px;
-    margin-left: 45px;
-    background: transparent;
 }
 
-#gtext{
+#gtext {
     letter-spacing: 1px;
-    background: transparent;
     font-size: 18px;
 }
 
