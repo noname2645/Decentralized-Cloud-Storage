@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom"; // Import Link
 import { useNavigate } from 'react-router-dom';
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  onAuthStateChanged,
-  GoogleAuthProvider,
-  signInWithPopup,
-  setPersistence,
-  browserSessionPersistence
-} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPersistence} from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../config.js';
-import "../Stylesheets/register.css";
+import styles from "../Stylesheets/register.module.css";
 import Google from "../assets/Images/google.png";
 
 // Initialize Firebase
@@ -100,12 +92,12 @@ const Register = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleEmailSignup}>
-      <p className="title">Register</p>
+    <form className={styles.form} onSubmit={handleEmailSignup}>
+      <p className={styles.title}>Register</p>
 
       <label>
         <input
-          className="input"
+          className={styles.input}
           type="text"
           placeholder="Name"
           required
@@ -116,7 +108,7 @@ const Register = () => {
 
       <label>
         <input
-          className="input"
+          className={styles.input}
           type="email"
           placeholder="Email"
           required
@@ -127,7 +119,7 @@ const Register = () => {
 
       <label>
         <input
-          className="input"
+          className={styles.input}
           type="password"
           placeholder="Password"
           required
@@ -136,7 +128,7 @@ const Register = () => {
         />
       </label>
 
-      <button type="submit" className="submit">Register</button>
+      <button type="submit" className={styles.submit}>Register</button>
 
       {isVerificationSent && (
         <div className="verification-message">
@@ -146,17 +138,18 @@ const Register = () => {
 
       {errorMessage && <p className="error">{errorMessage}</p>}
 
-      <p id="OR">OR USE THIS METHOD</p>
+      <p id={styles.OR}>OR USE THIS METHOD</p>
 
       <button
         type="button"
         onClick={handleGoogleSignup}
-        className="google-signup-btn">
-        <img className="gimg" src={Google} alt="Google icon" />
-        <p id="gtext">Sign Up with Google</p>
+        className={styles.gsignupbtn}>
+        <img className={styles.gimg} src={Google} alt="Google icon" />
+        <p id={styles.gtext}>Sign Up with Google</p>
       </button>
 
-      <p className="signin">Already have an account? <a href="/login">Sign in</a></p>
+      <p className={styles.signin}>Already have an account? <Link to="/login">Login</Link>
+      </p>
     </form>
   );
 };

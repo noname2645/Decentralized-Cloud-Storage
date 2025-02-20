@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(39, 36, 36);
+    font-family: "Afacad Flux", "Inter", "Merienda", sans-serif;
+}
+
+/* Form Container */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;  /* Reduced from 20px */
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 15px;
+}
+
+/* Title Style */
+.title {
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00bfff;
+    text-align: center;
+    margin-bottom: 0;  /* Removed margin-bottom */
+}
+
+/* Animated title dots */
+.title::before,
+.title::after {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    margin-bottom: 25px;
+    margin-left: 49px;
+    border-radius: 50%;
+    background-color: #00bfff;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+/* Form Message and Sign In link */
+.message,
+.signin {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.signin a:hover {
+    text-decoration: underline;
+    color: royalblue;
+}
+
+/* Form Input Labels */
+.form label {
+    position: relative;
+    width: 100%;
+}
+
+.form label input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.form label input::placeholder {
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit Button */
+.submit {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #000000;
+    font-size: 18px;
+    background-color: #00bfff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 60%;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.submit:hover {
+    background-color: #00bfff96;
+}
+
+#OR {
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 15px 0;
+    
+}
+
+/* Google Sign Up Button */
+.gsignupbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0D1B4C;
+    color: white;
+    padding: 7px;
+    width: 100%;
+    border: 2px solid navy;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gsignupbtn:hover {
+    background-color: #022865;
+}
+
+.gimg {
+    height: 40px;
+    width: 40px;
+}
+
+#gtext {
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
